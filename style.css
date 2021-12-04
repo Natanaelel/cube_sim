@@ -17,7 +17,7 @@ body{
     background-color: rgb(102, 102, 102);
     outline: none;
 }
-#move{
+#moves{
     position: absolute;
     left: 400px;
     width: 100px;
