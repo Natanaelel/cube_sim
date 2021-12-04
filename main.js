@@ -8,6 +8,9 @@ let ambientLight
 let directionalLight
 
 
+var doAnimate = true
+
+
 let clock = new THREE.Clock();
 
 
@@ -122,7 +125,7 @@ class Cube{
   rotate(side = "right", turn = 1){
     if(rotateDict[side]){
       
-      animateRotation(side, turn * Math.PI * 0.5 - Math.PI, animationTime)
+      if(doAnimate) animateRotation(side, turn * Math.PI * 0.5 - Math.PI, animationTime)
       
       let matrix = rotateDict[side]
       let newEdges = matrix.edges.map(index=>this.edges[index[0]])

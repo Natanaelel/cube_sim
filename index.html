@@ -2,13 +2,11 @@
 <html lang="en">
 <head>
   <title>Cube</title>
-  <style>
-    body{
-      margin: 0px;
-    }
-  </style>
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body style="display: block;">
+  <button id="dump" onclick="getState()">Dump state</button>
+  <button id="load" onclick="alert('type \'setState([...])\' in the console')">Load state</button>
   <div id="webgl"></div>
   <script src="./three/three.js"></script>
   <script src="./three/OrbitControls.js"></script>

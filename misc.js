@@ -3,7 +3,8 @@ function stateFromPerm(perm){
 
 }
 
-function getState(cube){
+function getState(){
+    let cube = theCube
     let state = Array(9).fill().map(_=>Array(12).fill(" "))
     let set = (side, x, y, color) => {
 
@@ -104,8 +105,9 @@ function getState(cube){
 getState(theCube)
 
 
-function setState(cube, state){
-    state = state.split("\n")
+function setState(state){
+
+    state = Array.isArray(state) ? state : state.split("\n")
     let get = (side, x, y) => {
         let [xoff, yoff] = [[3, 0], [3, 3], [6, 3], [9, 3], [0, 3], [3, 6]][side]
         return state[yoff + y][xoff + x]
