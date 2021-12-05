@@ -187,3 +187,18 @@ function setState(state){
 
     resetScene()
 }
+
+function getScramble(){
+    let moves = []
+    for(let i = 0; i < 100; i++){
+        let side = "UFRBLD"[Math.floor((Math.random() * 6))]
+        let times = ["'", "2", ""][Math.floor(Math.random() * 3)]
+        moves.push(side + times)
+    }
+    return moves.join(" ")
+}
+function invertMoves(moves){
+    return moves.split(" ").map(move=>{
+        return move[0] + (move[1] == "2" ? "2" : move[1] == "'" ? "" : "'") 
+    }).reverse().join(" ")
+}
