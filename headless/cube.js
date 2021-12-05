@@ -13,7 +13,7 @@
 */
 
 
-class Cube{
+module.exports = class Cube{
   constructor(){
     this.rotateDict = {
       "right": {
@@ -112,7 +112,7 @@ class Cube{
   }
 
   isSolved(){
-    return getState().join("").replace(/[^WGRBOY]/g,"") == "WWWWWWWWWOOOGGGRRRBBBOOOGGGRRRBBBOOOGGGRRRBBBYYYYYYYYY"
+    return this.getState().join("").replace(/[^WGRBOY]/g,"") == "WWWWWWWWWOOOGGGRRRBBBOOOGGGRRRBBBOOOGGGRRRBBBYYYYYYYYY"
   }
 
   getState(){
